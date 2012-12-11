@@ -58,3 +58,14 @@ BuildRequires:	perl-devel
 %{perl_vendorarch}/Date/
 %{perl_vendorarch}/auto/Date/
 %{_mandir}/man3/Date::Simple*.3pm*
+
+
+%changelog
+* Wed Jan 25 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 3.03-2
++ Revision: 768358
+- svn commit -m mass rebuild of perl extension against perl 5.14.2
+
+* Wed Sep 21 2011 Alexander Barakin <abarakin@mandriva.org> 3.03-1
++ Revision: 700688
+- imported package perl-Date-Simple
+
