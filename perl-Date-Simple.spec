@@ -1,12 +1,13 @@
+%define upstream_version 3.03_03
+
 Summary:	Simple date object for perl
 Name:		perl-Date-Simple
-Version:	3.03
-Release:	2
+Version:	%perl_convert_version %{upstream_version}
+Release:	1
 License:	GPL+ or Artistic
 Group:		Development/Perl 
 Url:		http://search.cpan.org/dist/Date-Simple/
-Source0:	http://search.cpan.org/CPAN/authors/id/I/IZ/IZUT/Date-Simple-%{version}.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Source0:	http://www.cpan.org/authors/id/I/IZ/IZUT/Date-Simple-%{upstream_version}.tar.gz
 #Requires:	perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 BuildRequires:	perl(ExtUtils::MakeMaker), perl(Test::More)
 BuildRequires:	perl-devel
@@ -21,7 +22,7 @@ BuildRequires:	perl-devel
 %{summary}.
 
 %prep
-%setup -q -n Date-Simple-%{version}
+%setup -q -n Date-Simple-%{upstream_version}
 
 # Spurious exec permissions in files from tarball
 /usr/bin/find lib -type f -exec %{__chmod} -x {} ';'
@@ -36,13 +37,9 @@ BuildRequires:	perl-devel
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor OPTIMIZE="%{optflags}"
-%{__make} %{?_smp_mflags}
-
-%clean
-%{__rm} -rf %{buildroot}
+%make
 
 %install
-%{__rm} -rf %{buildroot}
 %{__make} pure_install PERL_INSTALL_ROOT=%{buildroot}
 /usr/bin/find %{buildroot} -type f -name .packlist -exec %{__rm} -f {} ';'
 /usr/bin/find %{buildroot} -type f -name '*.bs' -a -size 0 -exec %{__rm} -f {} ';'
@@ -50,10 +47,9 @@ BuildRequires:	perl-devel
 %{__chmod} -R u+w %{buildroot}
 
 %check
-%{__make} test
+%make test
 
 %files
-%defattr(-,root,root,-)
 %doc ChangeLog COPYING README
 %{perl_vendorarch}/Date/
 %{perl_vendorarch}/auto/Date/
