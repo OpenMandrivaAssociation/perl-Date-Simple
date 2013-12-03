@@ -1,12 +1,11 @@
 Summary:	Simple date object for perl
 Name:		perl-Date-Simple
-Version:	3.03
-Release:	2
+Version:	%perl_convert_version 3.03.03
+Release:	1
 License:	GPL+ or Artistic
 Group:		Development/Perl 
 Url:		http://search.cpan.org/dist/Date-Simple/
-Source0:	http://search.cpan.org/CPAN/authors/id/I/IZ/IZUT/Date-Simple-%{version}.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+Source0:	http://www.cpan.org/authors/id/I/IZ/IZUT/Date-Simple-3.03_03.tar.gz
 #Requires:	perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 BuildRequires:	perl(ExtUtils::MakeMaker), perl(Test::More)
 BuildRequires:	perl-devel
@@ -39,10 +38,8 @@ BuildRequires:	perl-devel
 %{__make} %{?_smp_mflags}
 
 %clean
-%{__rm} -rf %{buildroot}
 
 %install
-%{__rm} -rf %{buildroot}
 %{__make} pure_install PERL_INSTALL_ROOT=%{buildroot}
 /usr/bin/find %{buildroot} -type f -name .packlist -exec %{__rm} -f {} ';'
 /usr/bin/find %{buildroot} -type f -name '*.bs' -a -size 0 -exec %{__rm} -f {} ';'
@@ -68,4 +65,5 @@ BuildRequires:	perl-devel
 * Wed Sep 21 2011 Alexander Barakin <abarakin@mandriva.org> 3.03-1
 + Revision: 700688
 - imported package perl-Date-Simple
+
 
