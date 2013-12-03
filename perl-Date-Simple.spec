@@ -36,7 +36,7 @@ BuildRequires:	perl-devel
 %{__sed} -i -e '/^lib\/Date\/Simple\/NoXS\.pm$/d' MANIFEST
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor OPTIMIZE="%{optflags} -fPIC"
+%{__perl} Makefile.PL INSTALLDIRS=vendor OPTIMIZE="-fPIC"
 %make
 
 %install
