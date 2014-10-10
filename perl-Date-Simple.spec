@@ -3,7 +3,7 @@
 Summary:	Simple date object for perl
 Name:		perl-Date-Simple
 Version:	%perl_convert_version %{upstream_version}
-Release:	1
+Release:	2
 License:	GPL+ or Artistic
 Group:		Development/Perl 
 Url:		http://search.cpan.org/dist/Date-Simple/
