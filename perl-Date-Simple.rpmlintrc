@@ -1,1 +1,1 @@
-addFilter("E: debuginfo-without-sources")
+addFilter("debuginfo-without-sources")
