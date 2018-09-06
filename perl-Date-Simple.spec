@@ -3,7 +3,7 @@
 Summary:	Simple date object for perl
 Name:		perl-Date-Simple
 Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Release:	1
 License:	GPL+ or Artistic
 Group:		Development/Perl 
 Url:		http://search.cpan.org/dist/Date-Simple/
@@ -23,7 +23,7 @@ BuildRequires:	perl-devel
 %{summary}.
 
 %prep
-%setup -q -n Date-Simple-%{upstream_version}
+%setup -q -n Date-Simple-3.03
 
 # Spurious exec permissions in files from tarball
 /usr/bin/find lib -type f -exec %{__chmod} -x {} ';'
