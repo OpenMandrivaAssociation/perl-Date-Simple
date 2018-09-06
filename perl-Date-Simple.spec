@@ -1,4 +1,4 @@
-%define upstream_version 3.03_03
+%define upstream_version 3.03
 
 Summary:	Simple date object for perl
 Name:		perl-Date-Simple
