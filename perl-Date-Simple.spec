@@ -10,6 +10,7 @@ Url:		https://search.cpan.org/dist/Date-Simple/
 Source0:	http://www.cpan.org/authors/id/I/IZ/IZUT/Date-Simple-%{upstream_version}.tar.gz
 Source10:	%{name}.rpmlintrc
 #Requires:	perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
+BuildRequires:	make
 BuildRequires:	perl(ExtUtils::MakeMaker), perl(Test::More)
 BuildRequires:	perl-devel
 
