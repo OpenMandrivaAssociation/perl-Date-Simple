@@ -1,13 +1,11 @@
-%define upstream_version 3.03
-
 Summary:	Simple date object for perl
 Name:		perl-Date-Simple
-Version:	%{upstream_version}
-Release:	2
+Version:	3.03
+Release:	3
 License:	GPL+ or Artistic
 Group:		Development/Perl 
 Url:		https://metacpan.org/dist/Date-Simple
-Source0:	https://cpan.metacpan.org/authors/id/I/IZ/IZUT/Date-Simple-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/I/IZ/IZUT/Date-Simple-%{version}.tar.gz
 Source10:	%{name}.rpmlintrc
 #Requires:	perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 BuildRequires:	make
