@@ -1,11 +1,12 @@
+%define upstream_version 3.03
 Summary:	Simple date object for perl
 Name:		perl-Date-Simple
 Version:	3.03
-Release:	3
+Release:	1
 License:	GPL+ or Artistic
 Group:		Development/Perl 
 Url:		https://metacpan.org/dist/Date-Simple
-Source0:	https://cpan.metacpan.org/authors/id/I/IZ/IZUT/Date-Simple-%{version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/I/IZ/IZUT/Date-Simple-3.03.tar.gz
 Source10:	%{name}.rpmlintrc
 #Requires:	perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 BuildRequires:	make
@@ -55,13 +56,4 @@ BuildRequires:	perl-devel
 %{perl_vendorarch}/auto/Date/
 %{_mandir}/man3/Date::Simple*.3pm*
 
-
-%changelog
-* Wed Jan 25 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 3.03-2
-+ Revision: 768358
-- svn commit -m mass rebuild of perl extension against perl 5.14.2
-
-* Wed Sep 21 2011 Alexander Barakin <abarakin@mandriva.org> 3.03-1
-+ Revision: 700688
-- imported package perl-Date-Simple
 
