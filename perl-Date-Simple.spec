@@ -1,14 +1,15 @@
+%global debug_package %{nil}
 %define upstream_version 3.03
 Summary:	Simple date object for perl
 Name:		perl-Date-Simple
 Version:	3.03
-Release:	5
+Release:	6
 License:	GPL+ or Artistic
 Group:		Development/Perl 
 Url:		https://metacpan.org/dist/Date-Simple
 Source0:	https://cpan.metacpan.org/authors/id/I/IZ/IZUT/Date-Simple-3.03.tar.gz
 Source10:	%{name}.rpmlintrc
-#Requires:	perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
+#Requires:	perl(:MODULE_COMPAT_%(eval "`perl -V:version`"; echo $version))
 BuildRequires:	make
 BuildRequires:	perl(ExtUtils::MakeMaker), perl(Test::More)
 BuildRequires:	perl-devel
@@ -37,7 +38,7 @@ BuildRequires:	perl-devel
 %{__sed} -i -e '/^lib\/Date\/Simple\/NoXS\.pm$/d' MANIFEST
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor OPTIMIZE="-fPIC"
+perl Makefile.PL INSTALLDIRS=vendor OPTIMIZE="-fPIC"
 %make
 
 %install
@@ -50,6 +51,7 @@ BuildRequires:	perl-devel
 %check
 # soft: do not fail package on test failures
 set +e
+:  # soft check
 :  # soft check
 %make test || :
 
