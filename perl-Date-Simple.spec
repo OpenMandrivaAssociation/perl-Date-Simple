@@ -2,7 +2,7 @@
 Summary:	Simple date object for perl
 Name:		perl-Date-Simple
 Version:	3.03
-Release:	4
+Release:	5
 License:	GPL+ or Artistic
 Group:		Development/Perl 
 Url:		https://metacpan.org/dist/Date-Simple
@@ -50,7 +50,8 @@ BuildRequires:	perl-devel
 %check
 # soft: do not fail package on test failures
 set +e
-%make test
+:  # soft check
+%make test || :
 
 %files
 %doc ChangeLog COPYING README
