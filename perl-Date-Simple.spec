@@ -2,7 +2,7 @@
 Summary:	Simple date object for perl
 Name:		perl-Date-Simple
 Version:	3.03
-Release:	2
+Release:	3
 License:	GPL+ or Artistic
 Group:		Development/Perl 
 Url:		https://metacpan.org/dist/Date-Simple
