@@ -3,7 +3,7 @@
 Summary:	Simple date object for perl
 Name:		perl-Date-Simple
 Version:	3.03
-Release:	6
+Release:	7
 License:	GPL+ or Artistic
 Group:		Development/Perl 
 Url:		https://metacpan.org/dist/Date-Simple
@@ -53,6 +53,7 @@ perl Makefile.PL INSTALLDIRS=vendor OPTIMIZE="-fPIC"
 set +e
 :  # soft check
 :  # soft check
+make test || :
 %make test || :
 
 %files
